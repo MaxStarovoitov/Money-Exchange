@@ -9,11 +9,11 @@ module.exports = function makeExchange(currency) {
     N = remainder(((currency % 50)%25)%10,5);
     P = remainder((((currency % 50)%25)%10)%5,1);
 
-    result.H = ((H > 0) ? H : 0);
-    result.Q = ((Q > 0) ? Q : 0);
-    result.D = ((D > 0) ? D : 0);
-    result.N = ((N > 0) ? N : 0);
-    result.P = ((P > 0) ? P : 0);
+    if (H > 0) { o.H = H; }
+    if (Q > 0) { o.Q = Q; }
+    if (D > 0) { o.D = D; }
+    if (N > 0) { o.N = N; }
+    if (P > 0) { o.P = P; }
   }
 
   return result;
